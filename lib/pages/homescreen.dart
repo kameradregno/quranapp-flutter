@@ -49,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: _appbar(),
       body: _body(),
-      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -80,30 +79,6 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           );
         },
-      );
-
-  BottomNavigationBar _bottomNavigationBar() => BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        items: [
-          _bottomNavigationBarItem(
-              icon: 'assets/svg/quran_icon.svg', label: 'Quran'),
-          _bottomNavigationBarItem(
-              icon: 'assets/svg/doa_icon.svg', label: 'Doa'),
-          _bottomNavigationBarItem(
-              icon: 'assets/svg/bookmark_icon.svg', label: 'Bookmark'),
-        ],
-      );
-
-  BottomNavigationBarItem _bottomNavigationBarItem(
-          {required String icon, required String label}) =>
-      BottomNavigationBarItem(
-        icon: SvgPicture.asset(icon, color: secondary),
-        activeIcon: SvgPicture.asset(
-          icon,
-          color: primary,
-        ),
-        label: label,
       );
 
   DefaultTabController _body() => DefaultTabController(
